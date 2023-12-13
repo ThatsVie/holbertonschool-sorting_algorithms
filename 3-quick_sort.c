@@ -66,12 +66,11 @@ void recursive_quicksort(int *array, int start, int end, size_t size)
 	/* Check if there are elements to sort */
 	if (start >= end)
 		return;
-	
+
 	/* Find the pivot index and recursively sort sub-arrays*/
 	pivot = partition(array, start, end, size);
 	recursive_quicksort(array, start, pivot - 1, size);
 	recursive_quicksort(array, pivot + 1, end, size);
-	
 }
 
 /**

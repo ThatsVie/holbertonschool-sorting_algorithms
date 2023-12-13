@@ -37,7 +37,7 @@ int partition(int *array, int start, int end, size_t size)
 	int pivot = array[end];
 
 	/* Iterate through the partitioned array*/
-	for (right_index = start; right_index < end; right_index++)
+	for (right_index = start; right_index <= end; right_index++)
 	{
 		 /* If current element is less than pivot, swap elements*/
 		if (array[right_index] < pivot)

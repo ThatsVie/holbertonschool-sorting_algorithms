@@ -10,11 +10,14 @@ void swap_elements(int *array, int index1, int index2, size_t size)
 {
 	int temp;
 
+	/* Check if the indices are different before swapping*/
 	if (index1 != index2)
 	{
+		/* Swap the elements at the given indices */
 		temp = array[index1];
 		array[index1] = array[index2];
 		array[index2] = temp;
+		/* Print the array after the swap*/
 		print_array(array, size);
 	}
 }
@@ -29,18 +32,23 @@ void swap_elements(int *array, int index1, int index2, size_t size)
  */
 int partition(int *array, int start, int end, size_t size)
 {
-	int left_index = start, right_index, pivot = array[end];
+	int left_index = start;
+       	int right_index;
+	int pivot = array[end];
 
+	/* Iterate through the partitioned array*/
 	for (right_index = start; right_index < end; right_index++)
 	{
+		 /* If current element is less than pivot, swap elements*/
 		if (array[right_index] < pivot)
 		{
 			swap_elements(array, left_index, right_index, size);
 			left_index++;
 		}
 	}
+	/* Swap the pivot to its correct position*/
 	swap_elements(array, left_index, end, size);
-	return left_index;
+	return (left_index);
 }
 
 /**
@@ -55,8 +63,10 @@ void recursive_quicksort(int *array, int start, int end, size_t size)
 {
 	int pivot;
 
+	/* Check if there are elements to sort */
 	if (start < end)
 	{
+		/* Find the pivot index and recursively sort sub-arrays*/
 		pivot = partition(array, start, end, size);
 		recursive_quicksort(array, start, pivot - 1, size);
 		recursive_quicksort(array, pivot + 1, end, size);
@@ -66,13 +76,15 @@ void recursive_quicksort(int *array, int start, int end, size_t size)
 /**
  * quick_sort - sorts an array of integers in ascending order
  * using the Quick sort algorithm
- * @array:
- * @size:
+ * @array: array of integers
+ * @size: size of array
  */
 void quick_sort(int *array, size_t size)
 {
+	/* Check if the array has more than one element*/
 	if (size < 2)
 		return;
 
+	/* Call the recursive_quicksort function to sort the entire array */
 	recursive_quicksort(array, 0, size - 1, size);
 }

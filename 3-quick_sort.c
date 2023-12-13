@@ -33,7 +33,7 @@ void swap_elements(int *array, int index1, int index2, size_t size)
 int partition(int *array, int start, int end, size_t size)
 {
 	int left_index = start;
-       	int right_index;
+	int right_index;
 	int pivot = array[end];
 
 	/* Iterate through the partitioned array*/

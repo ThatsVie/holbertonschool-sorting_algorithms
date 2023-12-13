@@ -69,7 +69,7 @@ void recursive_quicksort(int *array, int start, int end, size_t size)
  * @array:
  * @size:
  */
-void quick_sort(int *array, size_t size);
+void quick_sort(int *array, size_t size)
 {
 	if (size < 2)
 		return;

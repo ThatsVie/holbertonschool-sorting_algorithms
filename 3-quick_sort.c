@@ -27,6 +27,7 @@ void swap_elements(int *array, int index1, int index2, size_t size)
  * @size: size of the array
  * Return: pivot index
  */
+int partition(int *array, int start, int end, size_t size)
 {
 	int left_index = start, right_index, pivot = array[end];
 

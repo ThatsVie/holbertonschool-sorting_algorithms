@@ -3,9 +3,6 @@
 
 This repository contains C implementations of various sorting algorithms. Each algorithm is implemented as a function in the `sort.h` header file and corresponding source file.
 
-## Algorithms
-
-### Bubble Sort
 Usage
 To use any of these sorting algorithms, include the sort.h header file in your project, and call the corresponding function with the array or list you want to sort.
 
